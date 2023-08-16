@@ -39,5 +39,11 @@ a = [2, 3, 4]
 
 b, c, d = a
 
-print(b)
-print(c)
+# print(b)
+# print(c)
+
+a = float('inf')
+print(a)
+
+for i in range(a):
+    print("happy")
