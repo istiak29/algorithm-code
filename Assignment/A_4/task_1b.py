@@ -10,6 +10,8 @@ def print_graph(graph, output_file):
 
     output_file.write(result.strip())
 
+    return result
+
 
 def adjacency_list(input_file):
     vertice, edge = list(map(int, input_file.readline().split()))
@@ -32,7 +34,10 @@ input_file = open("input_1b.txt", "r")
 output_file = open("output_1b.txt", "w")
 
 Graph = adjacency_list(input_file)
-print_graph(Graph, output_file)
+graph_str = print_graph(Graph, output_file)
+
+print(Graph)
+print(graph_str)
 
 input_file.close()
 output_file.close()

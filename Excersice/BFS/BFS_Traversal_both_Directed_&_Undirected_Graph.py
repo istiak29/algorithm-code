@@ -25,13 +25,18 @@ def bfs_traversal(graph, start_vertex, file):
 
     visited[start_vertex] = True
     queue.append(start_vertex)
+    print('queue:', queue)
+
 
     printing_graph = []
     while queue:
         pop_vertex = queue.popleft()
         printing_graph.append(str(pop_vertex))
+        print('pop vertex:', pop_vertex)
+
 
         for neighbor in graph[pop_vertex]:
+            print('neighbor:', neighbor)
             if not visited[neighbor]:
                 visited[neighbor] = True
                 queue.append(neighbor)
@@ -50,4 +55,7 @@ bfs_output_file = open('bfs_dir_undir_output.txt', 'w')
 
 Graph = adjacency_graph_list(bfs_input_file, False)
 start = 1
-bfs_traversal(Graph, start, bfs_output_file)
+bfs_tra = bfs_traversal(Graph, start, bfs_output_file)
+
+print(Graph)
+print('BFS:', bfs_tra)
